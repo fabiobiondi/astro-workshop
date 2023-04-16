@@ -1,0 +1,39 @@
+---
+import { Image } from '@astrojs/image/components';
+import { Post } from '../model/post';
+
+interface Props {
+  items: Post[];
+}
+
+const { items } = Astro.props;
+---
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+  {
+    items.map((post: Post) => {
+      return <div>
+        <a href={post.url} target="_blank">
+          {
+            post.cover_image &&
+              <Image
+                src={post.cover_image}
+                alt={post.title}
+                width={500}
+                aspectRatio="1"
+                quality={80}
+                format="webp"
+                class="rounded-xl"
+              />
+          }
+          {post.title}
+        </a>
+      </div>
+    })
+  }
+</div>
+
+<style>
+  a {
+    @apply hover:text-pink-500
+  }
+</style>

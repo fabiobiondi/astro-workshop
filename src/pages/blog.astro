@@ -1,0 +1,19 @@
+---
+import Title from '../components/Title.astro';
+import Layout from '../layouts/Layout.astro';
+const allPosts = await Astro.glob('../pages/posts/*.md');
+const pageTitle = "My Blog";
+
+---
+<Layout pageTitle={pageTitle}>
+	<Title>{pageTitle}</Title>
+	{
+		allPosts.map(post => {
+			return <li>
+				<a href={post.url}>
+					{post.frontmatter.title}
+				</a>
+			</li>
+		})
+	}
+</Layout>

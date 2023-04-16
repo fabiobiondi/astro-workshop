@@ -1,0 +1,23 @@
+---
+import { Image } from '@astrojs/image/components';
+import emote from '../assets/tv_astro.png';
+---
+<main class="grid lg:grid-cols-2 place-items-center">
+  <div>
+    <Image
+      src={emote}
+      alt="Fabio Biondi Emote"
+      width={500}
+      aspectRatio="1"
+      quality={80}
+      format="webp"
+    />
+  </div>
+  <div>
+    <h1 class="text-7xl font-bold">Learnn</h1>
+    <h2 class="text-2xl">Rimani sempre aggiornato e scala il tuo business</h2>
+    <p class="text-lg mt-4 text-slate-300 max-w-xl">
+      I migliori esperti che condividono con te le loro strategie e framework per aiutarti a restare aggiornato e scalare il tuo business.
+    </p>
+  </div>
+</main>

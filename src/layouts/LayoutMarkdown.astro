@@ -1,0 +1,46 @@
+---
+import { Image } from '@astrojs/image/components';
+import Title from '../components/Title.astro';
+import Layout from "./Layout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<Layout pageTitle={frontmatter.title}>
+  <div class="max-w-xl mx-auto mt-12">
+
+    <Image
+      src={frontmatter.image.url}
+      alt={frontmatter.title}
+      width={400}
+      aspectRatio="1"
+      quality={50}
+      format="webp"
+      class="rounded-xl w-full"
+    />
+
+    <em>{frontmatter.pubDate.slice(0, 10)}</em>
+
+    <div class="flex gap-2">
+    {
+      frontmatter.tags.map(tag => {
+        return (
+          <div class="bg-slate-700 rounded-xl p-2 my-2 inline-block">
+            {tag}
+          </div>
+
+        )
+      })
+    }
+    </div>
+
+
+    <Title>{frontmatter.title}</Title>
+
+    <p>{frontmatter.description}</p>
+    <p><em>Written by: {frontmatter.author}</em></p>
+
+    <div class="my-6">
+      <slot />
+    </div>
+  </div>
+</Layout>
