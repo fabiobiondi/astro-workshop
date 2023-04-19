@@ -5,7 +5,7 @@ import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<Layout pageTitle={frontmatter.title}>
+<Layout title={frontmatter.title}>
   <div class="max-w-xl mx-auto mt-12">
 
     <Image
