@@ -1,6 +1,7 @@
 ---
 import { Image } from '@astrojs/image/components';
 import { Post } from '../model/post';
+import defaultImg from '../assets/default_image.png';
 
 interface Props {
   items: Post[];
@@ -14,9 +15,8 @@ const { items } = Astro.props;
       return <div>
         <a href={post.url} target="_blank">
           {
-            post.cover_image &&
               <Image
-                src={post.cover_image}
+                src={post.cover_image || defaultImg}
                 alt={post.title}
                 width={500}
                 aspectRatio="1"
