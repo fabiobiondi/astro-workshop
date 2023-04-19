@@ -18,7 +18,9 @@ const { title } = Astro.props;
 <body>
   <slot />
 </body>
-<footer>Fabio Biondi 2023</footer>
+<footer>
+  <a href="https://www.fabiobiondi.dev" target="_blank">fabiobiondi.dev</a> | <a href="/blog">(fake) Blog</a>
+</footer>
 </html>
 
 
@@ -31,5 +33,13 @@ const { title } = Astro.props;
   }
   footer {
     @apply text-center my-16 border-t border-slate-600;
+  }
+
+</style>
+
+<style is:global>
+
+  a {
+    @apply hover:text-pink-500
   }
 </style>
