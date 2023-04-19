@@ -8,7 +8,7 @@ import Newsletter from '../components/Newsletter';
 
 const posts = await axios.get('https://dev.to/api/articles?username=fabiobiondi')
 ---
-<Layout title="Astro">
+<Layout title="Astro Demo by Fabio Biondi">
 	<Hero />
 	<Title>Dev.To Posts</Title>
 	<DevToPosts items={posts.data} />

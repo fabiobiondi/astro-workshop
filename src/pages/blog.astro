@@ -5,7 +5,7 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 const pageTitle = "My Blog";
 
 ---
-<Layout pageTitle={pageTitle}>
+<Layout title={pageTitle}>
 	<Title>{pageTitle}</Title>
 	{
 		allPosts.map(post => {
